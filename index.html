@@ -1,112 +1,229 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grégory Richaudeau</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont;
-      background: #0d0d0d;
-      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      line-height: 1.6;
     }
-
-    header {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1521336575822-6da63fb45455') center/cover;
+    a { color: inherit; }
+    .hero {
+      min-height: 100vh;
+      padding: 32px 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.82)),
+        radial-gradient(circle at top, #2a2a2a 0%, #0a0a0a 60%);
     }
-
+    .hero-inner {
+      max-width: 820px;
+    }
+    .eyebrow {
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #b8b8b8;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
     h1 {
-      font-size: 40px;
-      margin: 0;
+      font-size: clamp(2.4rem, 8vw, 4.6rem);
+      line-height: 1.02;
+      margin: 0 0 12px;
+      font-weight: 700;
     }
-
-    h2 {
-      font-weight: 300;
-      margin-top: 10px;
-      color: #ccc;
+    .subtitle {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      color: #d2d2d2;
+      margin: 0 auto 26px;
+      max-width: 700px;
     }
-
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
     }
-
     .btn {
       display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background: white;
-      color: black;
+      padding: 12px 18px;
+      border-radius: 999px;
       text-decoration: none;
-      border-radius: 5px;
+      font-weight: 600;
+      border: 1px solid #ffffff22;
+      transition: .2s ease;
     }
-
-    .gallery img {
-      width: 100%;
-      margin-bottom: 10px;
-      border-radius: 10px;
+    .btn-primary {
+      background: #ffffff;
+      color: #000;
     }
-
-    iframe {
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+    }
+    .section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 64px 20px;
+      border-top: 1px solid #1c1c1c;
+    }
+    .section h2 {
+      margin: 0 0 18px;
+      font-size: 1.8rem;
+    }
+    .lead {
+      color: #d0d0d0;
+      max-width: 760px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #232323;
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .video-wrap {
+      position: relative;
       width: 100%;
-      height: 200px;
-      border-radius: 10px;
+      padding-top: 56.25%;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid #232323;
+      margin-top: 18px;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .muted { color: #b8b8b8; }
+    .book-note {
+      margin-top: 10px;
+      color: #cfcfcf;
+    }
+    footer {
+      padding: 30px 20px 50px;
+      text-align: center;
+      color: #9d9d9d;
+      border-top: 1px solid #1c1c1c;
+    }
+    @media (min-width: 760px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Grégory Richaudeau</h1>
-  <h2>ARTISTE / INTERPRÈTE • AUTEUR / RÉALISATEUR</h2>
-</header>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Acteur • Auteur • Réalisateur</div>
+      <h1>Grégory Richaudeau</h1>
+      <p class="subtitle">
+        Artiste / Interprète • Auteur / Réalisateur
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#demo">Voir la bande démo</a>
+        <a class="btn btn-secondary" href="#contact">Contact</a>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>Bio</h2>
-  <p>
-    Grégory Richaudeau débute sa formation au Cours Florent avant de rejoindre l’association 1000 Visages en 2022.
-    Il devient membre actif de la compagnie L’Art Éclair, avec laquelle il participe à la création de la pièce Gaby,
-    jouée dans plusieurs théâtres et festivals.
-    Il intègre ensuite la compagnie La Nuit Surprise par le Jour et joue dans le spectacle Certains l’aiment chaud.
-    En 2025, il tourne dans plusieurs courts-métrages et passe également à la réalisation avec deux films courts : IRL et PSSSSS.
-  </p>
-</section>
+  <section class="section" id="bio">
+    <h2>Bio</h2>
+    <p class="lead">
+      Grégory Richaudeau débute sa formation au Cours Florent avant de rejoindre l’association 1000 Visages en 2022.
+      Il devient membre actif de la compagnie L’Art Éclair, avec laquelle il participe à la création de la pièce Gaby,
+      jouée dans plusieurs théâtres et festivals. Il intègre ensuite la compagnie La Nuit Surprise par le Jour et joue
+      dans le spectacle Certains l’aiment show. En 2025, il tourne dans plusieurs courts-métrages et passe également
+      à la réalisation avec deux films courts : IRL et PSSSSS.
+    </p>
+  </section>
 
-<section>
-  <h2>Liens</h2>
-  <a class="btn" href="https://www.instagram.com/gregoryrichaudeau" target="_blank">Instagram</a>
-  <a class="btn" href="mailto:richaudeaugreg@hotmail.fr">Email</a>
-  <a class="btn" href="https://www.filmmakers.eu/fr/actors/gregory-richaudeau" target="_blank">Filmmakers</a>
-</section>
+  <section class="section" id="demo">
+    <h2>Bande démo</h2>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/6ZTOxLwNSvY"
+        title="Bande démo de Grégory Richaudeau"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
 
-<section>
-  <h2>Bande démo</h2>
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-</section>
+  <section class="section" id="infos">
+    <h2>Infos</h2>
+    <div class="card-grid">
+      <div class="card">
+        <strong>Profils</strong>
+        <div class="links">
+          <a class="btn btn-secondary" href="https://www.instagram.com/gregoryrichaudeau?igsh=N3NqamFqeHZzcmx5&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-secondary" href="https://www.filmmakers.eu/fr/actors/gregory-richaudeau" target="_blank" rel="noopener">Filmmakers</a>
+          <a class="btn btn-secondary" href="https://tpa.fr/acteurs-theatre/richaudeau-gregory-17683.html" target="_blank" rel="noopener">TPA</a>
+        </div>
+      </div>
+      <div class="card">
+        <strong>Contact</strong>
+        <p class="book-note">
+          <a href="mailto:richaudeaugreg@hotmail.fr">richaudeaugreg@hotmail.fr</a><br>
+          <a href="tel:+33679054585">06 79 05 45 85</a><br>
+          <span class="muted">Agent : free</span>
+        </p>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <h2>Book</h2>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/800x1000">
-    <img src="https://via.placeholder.com/800x1000">
-  </div>
-</section>
+  <section class="section" id="book">
+    <h2>Book</h2>
+    <p class="lead">
+      Le book photo complet arrive très bientôt sur cette page.
+    </p>
+    <p class="book-note">
+      En attendant, la bande démo, les liens professionnels et les informations de contact sont déjà accessibles.
+    </p>
+  </section>
 
-<section>
-  <h2>Contact</h2>
-  <p>Email : richaudeaugreg@hotmail.fr</p>
-  <p>Téléphone : 0679054585</p>
-</section>
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p class="lead">
+      Pour toute demande de casting, de collaboration ou d’informations complémentaires :
+      <br><br>
+      <a href="mailto:richaudeaugreg@hotmail.fr">richaudeaugreg@hotmail.fr</a>
+      <br>
+      <a href="tel:+33679054585">06 79 05 45 85</a>
+    </p>
+  </section>
+
+  <footer>
+    © Grégory Richaudeau
+  </footer>
 
 </body>
 </html>

@@ -6,7 +6,6 @@
   <title>Grégory Richaudeau</title>
   <style>
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -17,9 +16,7 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .hero {
       min-height: 100vh;
@@ -334,11 +331,11 @@
     © Grégory Richaudeau
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    (function () {
-      emailjs.init("d8DHdOZKJKkltjnfb");
-    })();
+    emailjs.init({
+      publicKey: "d8DHdOZKJKkltjnfb"
+    });
 
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
@@ -353,13 +350,13 @@
         subject: document.getElementById("subject").value,
         message: document.getElementById("message").value
       })
-        .then(function () {
-          formStatus.textContent = "Message envoyé !";
-          contactForm.reset();
-        })
-        .catch(function (error) {
-          formStatus.textContent = "Erreur : " + JSON.stringify(error);
-        });
+      .then(function () {
+        formStatus.textContent = "Message envoyé !";
+        contactForm.reset();
+      })
+      .catch(function (error) {
+        formStatus.textContent = "Erreur : " + JSON.stringify(error);
+      });
     });
   </script>
 

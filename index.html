@@ -281,7 +281,7 @@
       Le book photo complet arrive très bientôt sur cette page.
     </p>
     <p class="book-note">
-      En attendant, la bande démo, les travaux récents, les liens professionnels et les informations de contact sont déjà accessibles.
+      En attendant, la bande démo, les films récents, les liens professionnels et les informations de contact sont déjà accessibles.
     </p>
   </section>
 
@@ -347,13 +347,18 @@
       e.preventDefault();
       formStatus.textContent = "Envoi en cours...";
 
-      emailjs.sendForm("service_lkl5s7p", "template_m5qhqlp", this)
+      emailjs.send("service_lkl5s7p", "template_m5qhqlp", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+      })
         .then(function () {
           formStatus.textContent = "Message envoyé !";
           contactForm.reset();
         })
-        .catch(function () {
-          formStatus.textContent = "Une erreur est survenue. Réessaie dans quelques instants.";
+        .catch(function (error) {
+          formStatus.textContent = "Erreur : " + JSON.stringify(error);
         });
     });
   </script>

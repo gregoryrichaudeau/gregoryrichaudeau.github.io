@@ -331,34 +331,34 @@
     © Grégory Richaudeau
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    emailjs.init({
-      publicKey: "d8DHdOZKJKkltjnfb"
+  (function () {
+    emailjs.init("d8DHdOZKJKkltjnfb");
+  })();
+
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    formStatus.textContent = "Envoi en cours...";
+
+    emailjs.send("service_lkl5s7p", "template_m5qhqlp", {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value
+    })
+    .then(function () {
+      formStatus.textContent = "Message envoyé !";
+      contactForm.reset();
+    })
+    .catch(function (error) {
+      formStatus.textContent = "Erreur : " + JSON.stringify(error);
     });
-
-    const contactForm = document.getElementById("contactForm");
-    const formStatus = document.getElementById("formStatus");
-
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      formStatus.textContent = "Envoi en cours...";
-
-      emailjs.send("service_lkl5s7p", "template_m5qhqlp", {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value
-      })
-      .then(function () {
-        formStatus.textContent = "Message envoyé !";
-        contactForm.reset();
-      })
-      .catch(function (error) {
-        formStatus.textContent = "Erreur : " + JSON.stringify(error);
-      });
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>

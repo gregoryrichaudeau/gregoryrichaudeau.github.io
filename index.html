@@ -203,7 +203,26 @@
       border: 1px solid #233223;
       color: #dff5df;
     }
+.book-preview {
+  display: block;
+  margin: 20px 0 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #232323;
+  transition: transform .2s ease, border-color .2s ease;
+}
 
+.book-preview:hover {
+  transform: translateY(-3px);
+  border-color: #3a3a3a;
+}
+
+.book-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
     footer {
       padding: 30px 20px 50px;
       text-align: center;
@@ -318,19 +337,24 @@
   </section>
 
   <section class="section" id="book">
-    <h2>Book</h2>
-    <div class="card">
-      <p class="lead">
-        Une sélection de photos pour casting, portraits et variations de jeu.
-      </p>
-      <p class="book-note">
-        Le book complet sera disponible sur une page dédiée.
-      </p>
-      <div class="links">
-        <a class="btn btn-primary" href="book.html">Voir toutes les photos</a>
-      </div>
+  <h2>Book</h2>
+  <div class="card">
+    <p class="lead">
+      Une sélection de photos pour casting, portraits et variations de jeu.
+    </p>
+    <p class="book-note">
+      Le book complet est disponible sur une page dédiée.
+    </p>
+
+    <a href="book.html" class="book-preview">
+      <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Gregory_Richaudeau-7547.jpg" alt="Grégory Richaudeau portrait">
+    </a>
+
+    <div class="links">
+      <a class="btn btn-primary" href="book.html">Voir toutes les photos</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section" id="contact">
     <h2>Contact</h2>

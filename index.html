@@ -287,5 +287,23 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   window.location.href = "mailto:richaudeaugreg@hotmail.fr?subject=" + finalSubject + "&body=" + finalBody;
 });
 </script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("d8DHdOZKJKkltjnfb");
+})();
+
+document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_lkl5s7p", "template_m5qhqlp", this)
+        .then(function() {
+            alert("Message envoyé !");
+        }, function(error) {
+            alert("Erreur : " + JSON.stringify(error));
+        });
+});
+</script>
 </body>
 </html>

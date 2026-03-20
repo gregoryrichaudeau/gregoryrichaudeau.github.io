@@ -63,6 +63,7 @@
       font-weight: 600;
       border: 1px solid #ffffff22;
       transition: .2s ease;
+      cursor: pointer;
     }
     .btn-primary {
       background: #ffffff;
@@ -125,6 +126,15 @@
     .book-note {
       margin-top: 10px;
       color: #cfcfcf;
+    }
+    .form-field {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 10px;
+      border: 1px solid #2a2a2a;
+      background: #0d0d0d;
+      color: white;
     }
     footer {
       padding: 30px 20px 50px;
@@ -214,96 +224,69 @@
     <h2>Contact</h2>
     <p class="lead">
       Pour toute demande de casting, de collaboration ou d’informations complémentaires :
-      <br><br>
-      <a href="mailto:richaudeaugreg@hotmail.fr">richaudeaugreg@hotmail.fr</a>
-      <br>
-      <a href="tel:+33679054585">06 79 05 45 85</a>
     </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <strong>Coordonnées</strong>
+        <p class="book-note">
+          <a href="mailto:richaudeaugreg@hotmail.fr">richaudeaugreg@hotmail.fr</a><br>
+          <a href="tel:+33679054585">06 79 05 45 85</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <strong>Formulaire</strong>
+        <form id="contactForm">
+          <p>
+            <label for="name">Nom</label><br>
+            <input class="form-field" id="name" name="name" type="text" required>
+          </p>
+
+          <p>
+            <label for="email">Email</label><br>
+            <input class="form-field" id="email" name="email" type="email" required>
+          </p>
+
+          <p>
+            <label for="subject">Objet</label><br>
+            <input class="form-field" id="subject" name="subject" type="text" required>
+          </p>
+
+          <p>
+            <label for="message">Message</label><br>
+            <textarea class="form-field" id="message" name="message" rows="6" required></textarea>
+          </p>
+
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+      </div>
+    </div>
   </section>
 
   <footer>
     © Grégory Richaudeau
   </footer>
-<section class="section" id="contact">
-  <h2>Contact</h2>
-  <p class="lead">
-    Pour toute demande de casting, de collaboration ou d’informations complémentaires :
-  </p>
 
-  <div class="card-grid">
-    <div class="card">
-      <strong>Coordonnées</strong>
-      <p class="book-note">
-        <a href="mailto:richaudeaugreg@hotmail.fr">richaudeaugreg@hotmail.fr</a><br>
-        <a href="tel:+33679054585">06 79 05 45 85</a>
-      </p>
-    </div>
-
-    <div class="card">
-      <strong>Formulaire</strong>
-      <form id="contactForm">
-        <p>
-          <label for="name">Nom</label><br>
-          <input id="name" name="name" type="text" required style="width:100%;padding:12px;margin-top:6px;border-radius:10px;border:1px solid #2a2a2a;background:#0d0d0d;color:white;">
-        </p>
-
-        <p>
-          <label for="email">Email</label><br>
-          <input id="email" name="email" type="email" required style="width:100%;padding:12px;margin-top:6px;border-radius:10px;border:1px solid #2a2a2a;background:#0d0d0d;color:white;">
-        </p>
-
-        <p>
-          <label for="subject">Objet</label><br>
-          <input id="subject" name="subject" type="text" required style="width:100%;padding:12px;margin-top:6px;border-radius:10px;border:1px solid #2a2a2a;background:#0d0d0d;color:white;">
-        </p>
-
-        <p>
-          <label for="message">Message</label><br>
-          <textarea id="message" name="message" rows="6" required style="width:100%;padding:12px;margin-top:6px;border-radius:10px;border:1px solid #2a2a2a;background:#0d0d0d;color:white;"></textarea>
-        </p>
-
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const subject = document.getElementById('subject').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  const finalSubject = encodeURIComponent(subject + " — Site Gregory Richaudeau");
-  const finalBody = encodeURIComponent(
-    "Nom : " + name + "\\n" +
-    "Email : " + email + "\\n\\n" +
-    message
-  );
-
-  window.location.href = "mailto:richaudeaugreg@hotmail.fr?subject=" + finalSubject + "&body=" + finalBody;
-});
-</script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("d8DHdOZKJKkltjnfb");
+    })();
 
-<script>
-(function(){
-    emailjs.init("d8DHdOZKJKkltjnfb");
-})();
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-document.querySelector("form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm("service_lkl5s7p", "template_m5qhqlp", this)
-        .then(function() {
-            alert("Message envoyé !");
-        }, function(error) {
-            alert("Erreur : " + JSON.stringify(error));
+      emailjs.sendForm("service_lkl5s7p", "template_m5qhqlp", this)
+        .then(function () {
+          alert("Message envoyé !");
+          document.getElementById("contactForm").reset();
+        })
+        .catch(function (error) {
+          alert("Erreur : " + JSON.stringify(error));
         });
-});
-</script>
+    });
+  </script>
+
 </body>
 </html>

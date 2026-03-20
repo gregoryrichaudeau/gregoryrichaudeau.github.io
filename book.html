@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book — Grégory Richaudeau</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #ffffff22;
+      background: rgba(255,255,255,0.04);
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      line-height: 1;
+    }
+
+    .intro {
+      color: #d0d0d0;
+      max-width: 760px;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .gallery-item {
+      display: block;
+      background: #111;
+      border: 1px solid #232323;
+      border-radius: 22px;
+      overflow: hidden;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-2px);
+      border-color: #3a3a3a;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: #090909;
+    }
+
+    .caption {
+      padding: 14px 16px 16px;
+      color: #d8d8d8;
+      font-size: 0.98rem;
+    }
+
+    footer {
+      margin-top: 54px;
+      padding-top: 24px;
+      border-top: 1px solid #1c1c1c;
+      text-align: center;
+      color: #9d9d9d;
+    }
+
+    @media (min-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <a class="back-link" href="index.html">← Retour au site</a>
+    </div>
+
+    <h1>Book</h1>
+    <p class="intro">
+      Sélection de photos de Grégory Richaudeau pour casting, portraits et variations de jeu.
+      Cliquez sur une image pour l’ouvrir en grand.
+    </p>
+
+    <div class="gallery">
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7547.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7547.jpg" alt="Grégory Richaudeau — portrait 1">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7401.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7401.jpg" alt="Grégory Richaudeau — portrait 2">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7277-.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7277-.jpg" alt="Grégory Richaudeau — portrait 3">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7241.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7241.jpg" alt="Grégory Richaudeau — portrait 4">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7223.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7223.jpg" alt="Grégory Richaudeau — portrait 5">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7211.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7211.jpg" alt="Grégory Richaudeau — portrait 6">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7080.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7080.jpg" alt="Grégory Richaudeau — portrait 7">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7017.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-7017.jpg" alt="Grégory Richaudeau — portrait 8">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/GREG%20D16048.jpeg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/GREG%20D16048.jpeg" alt="Grégory Richaudeau — portrait 9">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-6977-nb.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Grégory_Richaudeau-6977-nb.jpg" alt="Grégory Richaudeau — portrait noir et blanc">
+        <div class="caption">Noir & blanc</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/image00167.jpeg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/image00167.jpeg" alt="Grégory Richaudeau — portrait 10">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/image00024.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/image00024.jpg" alt="Grégory Richaudeau — portrait 11">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Portrait%20Gregory%20Richaudeau%20Garrido%201.jpg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Portrait%20Gregory%20Richaudeau%20Garrido%201.jpg" alt="Grégory Richaudeau — portrait Garrido 1">
+        <div class="caption">Portrait</div>
+      </a>
+
+      <a class="gallery-item" href="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Portrait%20Gregory%20Richaudeau%20Garrido%20.jpeg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/gregoryrichaudeau/gregoryrichaudeau.github.io/refs/heads/main/Portrait%20Gregory%20Richaudeau%20Garrido%20.jpeg" alt="Grégory Richaudeau — portrait Garrido 2">
+        <div class="caption">Portrait</div>
+      </a>
+    </div>
+
+    <footer>
+      © Grégory Richaudeau
+    </footer>
+  </div>
+</body>
+</html>
